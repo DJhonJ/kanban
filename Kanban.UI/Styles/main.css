@@ -1,0 +1,44 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+/***************************
+    FORM
+****************************/
+.form-group {
+    margin-bottom: .8rem;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group .form-control {
+    width: 100%;
+}
+
+/***************************
+    LOGIN
+****************************/
+.container-login {
+    width: 300px;
+    margin: 8rem auto 0;
+}
+
+.container-login .acciones-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

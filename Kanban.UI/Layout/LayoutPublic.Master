@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutPublic.master.cs" Inherits="Kanban.layout.LayoutPublic" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Kanban</title>
+</head>
+<body runat="server">
+    <header></header>
+    <form id="form1" runat="server">
+        <main>
+            <asp:ContentPlaceHolder ID="contentPlaceHolderMain" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+    </form>
+
+    <footer></footer>
+</body>
+</html>

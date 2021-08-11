@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.UI", "Kanban.UI\Kanban.UI.csproj", "{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8FE84585-1714-4ACD-A780-D81FDAD1BD0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E4A8C65-59B6-4C6C-BD5D-B699ACA41DF1}
+	EndGlobalSection
+EndGlobal
