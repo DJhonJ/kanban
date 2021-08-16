@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.UI", "Kanban.UI\Kanb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8FE84585-1714-4ACD-A780-D81FDAD1BD0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Application", "Kanban.Application\Kanban.Application.csproj", "{F4EF00CF-53DF-4C53-A4B5-D76220B8E400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Domain", "Kanban.Domain\Kanban.Domain.csproj", "{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,22 @@ Global
 		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4EF00CF-53DF-4C53-A4B5-D76220B8E400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EF00CF-53DF-4C53-A4B5-D76220B8E400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EF00CF-53DF-4C53-A4B5-D76220B8E400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EF00CF-53DF-4C53-A4B5-D76220B8E400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
+		{F4EF00CF-53DF-4C53-A4B5-D76220B8E400} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
+		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E4A8C65-59B6-4C6C-BD5D-B699ACA41DF1}

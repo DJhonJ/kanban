@@ -81,6 +81,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Login\LoginController.cs" />
     <Compile Include="Common\WebUIRequest.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -137,8 +138,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Code\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kanban.Application\Kanban.Application.csproj">
+      <Project>{f4ef00cf-53df-4c53-a4b5-d76220b8e400}</Project>
+      <Name>Kanban.Application</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
