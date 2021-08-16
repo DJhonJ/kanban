@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutBlank.master.cs" Inherits="Kanban.layout.LayoutBlank" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"  />
@@ -10,13 +10,13 @@
     <title></title>
 </head>
 <body runat="server">
-    <form runat="server">
-        <main>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </main>
-    </form>
+    <main>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </main>
 
-    <script src="../Script/request.js"></script>
+    <script src="../Script/krequest.js"></script>
+    <script src="../Script/actionweb.js"></script>
+    <script src="../Script/main.js"></script>
 </body>
 </html>

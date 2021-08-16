@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kanban.UI.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,25 +9,17 @@ using System.Web.UI.WebControls;
 
 namespace Kanban
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : WebUIRequest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Title = "Login";
-
-            var w = Request.Form[""];
         }
 
-        protected void Ingresar(object sender, EventArgs e)
-        {
-            string username = Request.Form["txtUsuario"];
-        }
-
-        [WebMethod]
-        protected static string Ingresar()
+        protected string Ingresar(string username, string password)
         {
             //string username = Request.Form["txtUsuario"];
-            return "hola desde c#";
+            return $"user: {username}. password: {password}, form: {FormWebUI["user_param"]}";
         }
     }
 }
