@@ -59,7 +59,7 @@ namespace Kanban.UI.Common
                 return keyParams.Select(key => form.Get(key)).Cast<string>().ToArray();
             }
 
-            return null;
+            return new object[] { };
         }
     }
 }

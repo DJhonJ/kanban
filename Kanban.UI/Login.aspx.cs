@@ -12,24 +12,25 @@ namespace Kanban
 {
     public partial class Login : WebUIRequest
     {
-        private readonly LoginController _loginController;
-
-        //public Login(LoginController loginController)
-        //{
-        //    _loginController = loginController;
-        //}
+        private LoginController _loginController;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Title = "Login";
         }
 
+        public Login() { }
+
+        public Login(LoginController loginController)
+        {
+            _loginController = loginController;
+        }
+
         protected string Ingresar(string username, string password)
         {
-            //string username = Request.Form["txtUsuario"];
-            //string result = _loginController.StartSession(username, password);
+            string result = _loginController.StartSession(username, password);
 
-            return $"user: {username}. password: {password}, form: {FormWebUI["user_param"]}";
+            return result;
         }
     }
 }

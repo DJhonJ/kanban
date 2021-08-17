@@ -24,10 +24,8 @@ namespace Kanban.Application
             }
 
             var user = new User(0, username, password);
-            
-            
 
-            return "";
+            return $"username: {user.UserName}. password: {user.Password}";
         }
     }
 }

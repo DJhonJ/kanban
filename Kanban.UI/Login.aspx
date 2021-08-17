@@ -4,11 +4,11 @@
     <div class="container-login">
             <div class="form-group">
                 <label>Usuario</label>
-                <input type="text" class="form-control" name="txtUsuario" id="txtUsuario" autofocusc data-action-name="user" />
+                <input type="text" class="form-control" name="txtUsuario" id="txtUsuario" data-action-name="user" autofocus="" />
             </div>
             <div class="form-group">
                 <label>Clave</label>
-                <input type="text" class="form-control" name="txtPassword" id="txtPassword" data-action-name="password" />
+                <input type="password" class="form-control" name="txtPassword" id="txtPassword" data-action-name="password" />
             </div>
             <div class="acciones-login">
                 <div class="form-group">
