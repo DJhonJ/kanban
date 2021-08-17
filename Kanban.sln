@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Application", "Kanba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Domain", "Kanban.Domain\Kanban.Domain.csproj", "{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Infrastructure", "Kanban.Infrastructure\Kanban.Infrastructure.csproj", "{807ACD80-97BD-4C1C-BB6D-D3FC75AC45FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kanban.Data", "Kanban.Data\Kanban.Data.csproj", "{12299C09-C486-485C-8564-11EC906F527E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807ACD80-97BD-4C1C-BB6D-D3FC75AC45FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807ACD80-97BD-4C1C-BB6D-D3FC75AC45FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807ACD80-97BD-4C1C-BB6D-D3FC75AC45FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807ACD80-97BD-4C1C-BB6D-D3FC75AC45FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12299C09-C486-485C-8564-11EC906F527E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12299C09-C486-485C-8564-11EC906F527E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12299C09-C486-485C-8564-11EC906F527E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12299C09-C486-485C-8564-11EC906F527E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +49,8 @@ Global
 		{D6E9BA1F-7599-4E2B-8C6B-8DDCDDEADEC3} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
 		{F4EF00CF-53DF-4C53-A4B5-D76220B8E400} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
 		{45E4435A-DE65-499A-B6D1-9A2EB6A7A4FC} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
+		{807ACD80-97BD-4C1C-BB6D-D3FC75AC45FE} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
+		{12299C09-C486-485C-8564-11EC906F527E} = {8FE84585-1714-4ACD-A780-D81FDAD1BD0E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E4A8C65-59B6-4C6C-BD5D-B699ACA41DF1}

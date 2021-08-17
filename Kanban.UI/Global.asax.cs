@@ -7,6 +7,9 @@ using System.Web.Security;
 using System.Web.SessionState;
 using Kanban.Application;
 using Kanban.Code.Login;
+using Kanban.Data;
+using Kanban.Data.datasource;
+using Kanban.Infrastructure;
 using Microsoft.AspNet.WebFormsDependencyInjection.Unity;
 using Unity;
 
@@ -22,8 +25,12 @@ namespace Kanban
         private void ConfigDependencyInjection()
         {
             var container = this.AddUnity();
-            container.RegisterType<LoginController, LoginController>();
+
+            //container.RegisterType<ILocalDataUser, UserData>();
+            container.RegisterType<ILocalDataUser, UserData>();
+            container.RegisterType<UserRepository, UserRepository>();
             container.RegisterType<StartSession, StartSession>();
+            container.RegisterType<LoginController, LoginController>();
         }
     }
 }

@@ -159,6 +159,18 @@
       <Project>{f4ef00cf-53df-4c53-a4b5-d76220b8e400}</Project>
       <Name>Kanban.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kanban.Data\Kanban.Data.csproj">
+      <Project>{12299c09-c486-485c-8564-11ec906f527e}</Project>
+      <Name>Kanban.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kanban.Domain\Kanban.Domain.csproj">
+      <Project>{45e4435a-de65-499a-b6d1-9a2eb6a7a4fc}</Project>
+      <Name>Kanban.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kanban.Infrastructure\Kanban.Infrastructure.csproj">
+      <Project>{807acd80-97bd-4c1c-bb6d-d3fc75ac45fe}</Project>
+      <Name>Kanban.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

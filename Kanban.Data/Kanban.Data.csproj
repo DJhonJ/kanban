@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4EF00CF-53DF-4C53-A4B5-D76220B8E400}</ProjectGuid>
+    <ProjectGuid>{12299C09-C486-485C-8564-11EC906F527E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kanban.Application</RootNamespace>
-    <AssemblyName>Kanban.Application</AssemblyName>
+    <RootNamespace>Kanban.Data</RootNamespace>
+    <AssemblyName>Kanban.Data</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,14 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StartSession.cs" />
+    <Compile Include="repository\UserRepository.cs" />
+    <Compile Include="datasource\ILocalDataUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Kanban.Data\Kanban.Data.csproj">
-      <Project>{12299c09-c486-485c-8564-11ec906f527e}</Project>
-      <Name>Kanban.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Kanban.Domain\Kanban.Domain.csproj">
       <Project>{45e4435a-de65-499a-b6d1-9a2eb6a7a4fc}</Project>
       <Name>Kanban.Domain</Name>

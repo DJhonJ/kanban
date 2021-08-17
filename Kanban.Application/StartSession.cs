@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kanban.Data;
 using Kanban.Domain;
 
 namespace Kanban.Application
 {
-    // resive un repository en constructor
+    // recibe un repository en constructor
     public class StartSession
     {
+        private readonly UserRepository _userRepository;
+
+        public StartSession(UserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
+
         //recibe username y password
         public string Invoke(string username, string password)
         {
@@ -23,9 +31,21 @@ namespace Kanban.Application
                 return "password vacia";
             }
 
-            var user = new User(0, username, password);
+            var users = _userRepository.GetAllUsers();
 
-            return $"username: {user.UserName}. password: {user.Password}";
+            if (users == null)
+            {
+                return "usuario no existe";
+            }
+
+            var user = users.Where(u => u.UserName == username && u.Password == password).FirstOrDefault();
+
+            if (user == null)
+            {
+                return "usuario no existe";
+            }
+
+            return $"username: {user.UserName} - password: {user.Password}";
         }
     }
 }
