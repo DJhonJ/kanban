@@ -29,7 +29,6 @@ namespace Kanban
         protected string Ingresar(string username, string password)
         {
             string result = _loginController.StartSession(username, password);
-
             return result;
         }
     }

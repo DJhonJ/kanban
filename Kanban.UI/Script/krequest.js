@@ -15,7 +15,7 @@
         request.onreadystatechange = function () {
             if (request.readyState === XMLHttpRequest.DONE) {
                 if (request.status === 200) {
-                    console.log(request.responseText);
+                    console.log(request.response);
                 }
                 else {
                     console.log('problemas con la peticion');

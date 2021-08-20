@@ -10,5 +10,6 @@ namespace Kanban.Data.datasource
     public interface ILocalDataUser
     {
         List<User> GetAllUsers();
+        string RegisterUser(User user);
     }
 }

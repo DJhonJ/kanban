@@ -2,10 +2,14 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 14px;
+}
+
 body {
     padding: 0;
     margin: 0;
-    font-size: 14px;
+    
     font-family: sans-serif;
 }
 
@@ -16,6 +20,16 @@ button {
 /***************************
     FORM
 ****************************/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-12, col-sm-12, col-md-12, col-lg-12, col-xl-12 {
+    width: 100%;
+    padding: 0 0.8rem;
+}
+
 .form-group {
     margin-bottom: .8rem;
 }
@@ -28,12 +42,16 @@ button {
     width: 100%;
 }
 
+.btn-block {
+    width: 100%;
+}
+
 /***************************
     LOGIN
 ****************************/
 .container-login {
-    width: 300px;
     margin: 8rem auto 0;
+    width: 300px;
 }
 
 .container-login .acciones-login {
@@ -42,3 +60,189 @@ button {
     align-items: center;
 }
 
+/***************************
+    REGISTRO
+****************************/
+.container-registro {
+    margin: 3rem auto 0;
+    width: 35rem;
+}
+
+/***************************
+    MEDIAS QUERY
+****************************/
+/* MIN - WIDTH */
+@media screen and (min-width: 0px) {
+    /*
+        FORM
+    */
+    .col-12 {
+        width: 100%;
+    }
+
+    .col-11 {
+        width: calc((11 * 100%) / 12);
+    }
+
+    .col-10 {
+        width: calc((10 * 100%) / 12);
+    }
+
+    .col-9 {
+        width: calc((9 * 100%) / 12);
+    }
+
+    .col-8 {
+        width: calc((8 * 100%) / 12);
+    }
+
+    .col-7 {
+        width: calc((7 * 100%) / 12);
+    }
+
+    .col-6 {
+        width: calc((6 * 100%) / 12);
+    }
+
+    .col-5 {
+        width: calc((5 * 100%) / 12);
+    }
+
+    .col-4 {
+        width: calc((4 * 100%) / 12);
+    }
+
+    .col-3 {
+        width: calc((3 * 100%) / 12);
+    }
+
+    .col-2 {
+        width: calc((2 * 100%) / 12);
+    }
+
+    .col-1 {
+        width: calc((1 * 100%) / 12);
+    }
+}
+
+@media screen and (min-width: 576px) {
+    /*
+        FORM
+    */
+    .col-sm-12 {
+        width: 100%;
+    }
+
+    .col-sm-11 {
+        width: calc((11 * 100%) / 12);
+    }
+
+    .col-sm-10 {
+        width: calc((10 * 100%) / 12);
+    }
+
+    .col-sm-9 {
+        width: calc((9 * 100%) / 12);
+    }
+
+    .col-sm-8 {
+        width: calc((8 * 100%) / 12);
+    }
+
+    .col-sm-7 {
+        width: calc((7 * 100%) / 12);
+    }
+
+    .col-sm-6 {
+        width: calc((6 * 100%) / 12);
+    }
+
+    .col-sm-5 {
+        width: calc((5 * 100%) / 12);
+    }
+
+    .col-sm-4 {
+        width: calc((4 * 100%) / 12);
+    }
+
+    .col-sm-3 {
+        width: calc((3 * 100%) / 12);
+    }
+
+    .col-sm-2 {
+        width: calc((2 * 100%) / 12);
+    }
+
+    .col-sm-1 {
+        width: calc((1 * 100%) / 12);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /*
+        FORM
+    */
+    .col-md-12 {
+        width: 100%;
+    }
+
+    .col-md-11 {
+        width: calc((11 * 100%) / 12);
+    }
+
+    .col-md-10 {
+        width: calc((10 * 100%) / 12);
+    }
+
+    .col-md-9 {
+        width: calc((9 * 100%) / 12);
+    }
+
+    .col-md-8 {
+        width: calc((8 * 100%) / 12);
+    }
+
+    .col-md-7 {
+        width: calc((7 * 100%) / 12);
+    }
+
+    .col-md-6 {
+        width: calc((6 * 100%) / 12);
+    }
+
+    .col-md-5 {
+        width: calc((5 * 100%) / 12);
+    }
+
+    .col-md-4 {
+        width: calc((4 * 100%) / 12);
+    }
+
+    .col-md-3 {
+        width: calc((3 * 100%) / 12);
+    }
+
+    .col-md-2 {
+        width: calc((2 * 100%) / 12);
+    }
+
+    .col-md-1 {
+        width: calc((1 * 100%) / 12);
+    }
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}
+
+/* MAX - WIDTH */
+@media screen and (max-width: 768px) {
+    .container-login, .container-registro {
+        width: auto;
+    }
+}

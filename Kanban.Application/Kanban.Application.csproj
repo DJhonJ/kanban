@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RegisterUser.cs" />
     <Compile Include="StartSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

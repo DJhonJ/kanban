@@ -9,13 +9,13 @@ using Kanban.Application;
 using Kanban.Code.Login;
 using Kanban.Data;
 using Kanban.Data.datasource;
-using Kanban.Infrastructure;
+using Kanban.Infrastructure.database;
 using Microsoft.AspNet.WebFormsDependencyInjection.Unity;
 using Unity;
 
 namespace Kanban
 {
-    public class Global : System.Web.HttpApplication
+    public class GlobalUI : System.Web.HttpApplication
     {
         protected void Application_Start(object sender, EventArgs e)
         {
