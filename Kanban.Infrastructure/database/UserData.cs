@@ -12,7 +12,12 @@ namespace Kanban.Infrastructure.database
 {
     public class UserData: ILocalDataUser
     {
-        private const string NAME_SP = "GestionUsuario";
+        private readonly TransactSQL _transact;
+
+        public UserData(TransactSQL t)
+        {
+            _transact = t;
+        }
 
         public List<User> GetAllUsers()
         {
@@ -28,28 +33,7 @@ namespace Kanban.Infrastructure.database
 
         public string RegisterUser(User user)
         {
-            //var resultado = 
-
-
-            using (var connection = new Connection().GetConnection())
-            {
-                using (SqlCommand command = new SqlCommand("SP", connection))
-                {
-                    List<SqlParameter> parameters = new List<SqlParameter>()
-                    {
-
-                    };
-
-                    command.Parameters.Add(parameters.ToArray());
-
-                    using (SqlDataAdapter sqlAdapter = new SqlDataAdapter())
-                    {
-                        DataSet ds = new DataSet();
-                        sqlAdapter.Fill(ds);
-
-                    }
-                }
-            }
+            var resultado = _transact.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "S", SqlDbType.Char, 1, ParameterDirection.Input)).GetTable(0);
 
             return "";
         }

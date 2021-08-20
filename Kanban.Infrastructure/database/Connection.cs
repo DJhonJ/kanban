@@ -11,6 +11,7 @@ namespace Kanban.Infrastructure.database
     public class Connection: IDisposable
     {
         private SqlConnection sqlConnection;
+        private readonly string connectionString = "";
 
         public void Dispose()
         {
@@ -22,10 +23,24 @@ namespace Kanban.Infrastructure.database
             sqlConnection = new SqlConnection(GetConnectionString());
             return sqlConnection;
         }
-        
-        private string GetConnectionString()
+
+        string GetConnectionString()
         {
-            return ConfigurationManager.ConnectionStrings["Kanban"].ConnectionString;
+            return connectionString;
+            //string s = ConfigurationManager.ConnectionStrings["Kanban"].Name;
+            //return s;
+        }
+
+        public void Open()
+        {
+            if (sqlConnection == null) throw new Exception("fallo al abrir conexion.");
+            sqlConnection.Close();
+        }
+
+        public void Close()
+        {
+            if (sqlConnection == null) throw new Exception("fallo al cerrar conexion.");
+            sqlConnection.Close();
         }
     }
 }

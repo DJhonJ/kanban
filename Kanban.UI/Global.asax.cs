@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using Kanban.Application;
+using Kanban.Code;
 using Kanban.Code.Login;
 using Kanban.Data;
 using Kanban.Data.datasource;
@@ -26,11 +27,12 @@ namespace Kanban
         {
             var container = this.AddUnity();
 
-            //container.RegisterType<ILocalDataUser, UserData>();
+            container.RegisterType<TransactSQL, TransactSQL>();
             container.RegisterType<ILocalDataUser, UserData>();
             container.RegisterType<UserRepository, UserRepository>();
             container.RegisterType<StartSession, StartSession>();
             container.RegisterType<LoginController, LoginController>();
+            container.RegisterType<RegisterController, RegisterController>();
         }
     }
 }

@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col-12 col-sm-12 col-md-12">
-                <button type="submit" class="btn-block" data-action="Registrar">registrar</button>
+                <button type="submit" class="btn-block" data-action="Register">registrar</button>
             </div>
         </form>
     </section>

@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\LoginController.cs" />
-    <Compile Include="Code\RegistroController.cs" />
+    <Compile Include="Code\RegisterController.cs" />
     <Compile Include="Common\WebUIRequest.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
