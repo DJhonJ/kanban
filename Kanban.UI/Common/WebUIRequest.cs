@@ -20,9 +20,6 @@ namespace Kanban.UI.Common
 
         protected override void OnLoad(EventArgs e)
         {
-            //lleva a la pagina de donde se inicio la peticion
-            //base.OnLoad(e);
-
             if (Request.Form != null && !string.IsNullOrEmpty(FormWebUI["action"]))
             {
                 object resultMethod = new object();
@@ -30,6 +27,7 @@ namespace Kanban.UI.Common
                 try
                 {
                     //TODO: Problemas cuando hay un metodo sobrecargado.
+                    //TODO: Objeto response para retornar las respuestas del sistema
                     MethodInfo methodInfo = GetType().GetMethod(FormWebUI["action"], 
                         BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
 
@@ -48,6 +46,10 @@ namespace Kanban.UI.Common
                 HttpContext.Current.Response.SuppressContent = true;
                 //Response.Redirect("Login.aspx", false);
                 Context.ApplicationInstance.CompleteRequest();
+            }
+            else
+            {
+                base.OnLoad(e);
             }
         }
 

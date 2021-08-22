@@ -8,12 +8,12 @@ namespace Kanban.Domain
 {
     public class User
     {
-        public User(int id, string username, string password, string nombre, string email)
+        public User(int id, string username, string password, string name, string email)
         {
             Id = id;
             UserName = username;
             Password = password;
-            Nombre = nombre;
+            Name = name;
             Email = email;
         }
 
@@ -21,6 +21,6 @@ namespace Kanban.Domain
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public string Nombre { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -95,8 +95,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\LoginController.cs" />
-    <Compile Include="Code\RegisterController.cs" />
+    <Compile Include="Controller\DefaultController.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Common\WebUIRequest.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -110,6 +111,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IDefaultView.cs" />
     <Compile Include="Layout\LayoutBlank.Master.cs">
       <DependentUpon>LayoutBlank.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

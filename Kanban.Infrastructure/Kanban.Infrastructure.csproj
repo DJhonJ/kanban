@@ -62,8 +62,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="database\sql\" />
+    <Content Include="database\sql\GestionUsuario.sql" />
+    <Content Include="database\sql\script_estructura.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

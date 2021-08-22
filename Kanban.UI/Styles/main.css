@@ -1,20 +1,45 @@
 ﻿* {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-html {
-    font-size: 14px;
+:root {
+    --color-text-link: #58a6ff;
+    --color-text: #58a6ff;
 }
 
 body {
     padding: 0;
     margin: 0;
-    
-    font-family: sans-serif;
+    background-color: #c1b1e9;
+    font-size: 14px;
+}
+
+main {
+    padding: 1rem;
 }
 
 button {
     cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input {
+    padding: 8px 12px;
+    outline: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-link);
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /***************************
@@ -36,10 +61,32 @@ button {
 
 .form-group label {
     display: block;
+    margin-bottom: .5rem;
+}
+
+.form-group .form-check {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .form-group .form-control {
     width: 100%;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 100% 0;
+    align-items: center;
+}
+
+.input-group input, .input-group .form-control {
+    padding-right: 1.90rem;
+} 
+
+.input-group .icon-group {
+    position: relative;
+    left: -2rem;
 }
 
 .btn-block {
@@ -49,24 +96,57 @@ button {
 /***************************
     LOGIN
 ****************************/
-.container-login {
-    margin: 8rem auto 0;
-    width: 300px;
-}
-
 .container-login .acciones-login {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.container-login .form-auth {
+    width: 350px;
+}
+
+.container-login .form-auth, .container-register .form-register {
+    padding: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 9rem auto 0;
+    background-color: #fff;
+}
+
+.form-auth .call-register, .form-register .call-auth-login {
+    padding: 1rem;
+    text-align: center;
+}
+
+button[data-action] {
+    margin-top: 1rem;
+    background-color: #213458;
+    color: #fff;
+}
+
 /***************************
     REGISTRO
 ****************************/
-.container-registro {
-    margin: 3rem auto 0;
-    width: 35rem;
+.container-register .form-register {
+    width: 570px;
 }
+
+/*
+    RECOMENDACIONES ICONS MATERIAL DESING
+    size icons
+    .material-icons.md-18 { font-size: 18px; }
+    .material-icons.md-24 { font-size: 24px; }
+    .material-icons.md-36 { font-size: 36px; }
+    .material-icons.md-48 { font-size: 48px; }
+
+    color
+    .material-icons.orange600 { color: #FB8C00; }
+
+    enabled - disabled
+    .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+    .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+*/
 
 /***************************
     MEDIAS QUERY
@@ -241,8 +321,13 @@ button {
 }
 
 /* MAX - WIDTH */
-@media screen and (max-width: 768px) {
-    .container-login, .container-registro {
+@media screen and (max-width: 576px) {
+    .container-login, .container-register {
+        padding: 0 1rem;
+    }
+
+    .container-login .form-auth, .container-register .form-register {
         width: auto;
+        margin-top: 3rem;
     }
 }

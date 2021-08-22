@@ -1,4 +1,4 @@
-﻿using Kanban.Code;
+﻿using Kanban.Controller;
 using Kanban.UI.Common;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,8 @@ namespace Kanban
     {
         private readonly RegisterController _register;
 
+        public Registro() { }
+
         public Registro(RegisterController register)
         {
             _register = register;
@@ -23,9 +25,9 @@ namespace Kanban
 
         }
 
-        protected void Register()
+        protected string Register(string nombre, string email, string username, string password)
         {
-            _register.RegisterUser();
+            return _register.RegisterUser(nombre, email, username, password);
         }
     }
 }

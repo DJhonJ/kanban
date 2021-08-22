@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Kanban.Code
+namespace Kanban.Controller
 {
     public class RegisterController
     {
@@ -15,9 +15,9 @@ namespace Kanban.Code
             _registerUser = registerUser;
         }
 
-        public void RegisterUser()
+        public string RegisterUser(string nombre, string email, string username, string password)
         {
-            _registerUser.Invoke("", "", "", "");
+            return _registerUser.Invoke(nombre, email, username, password);
         }
     }
 }

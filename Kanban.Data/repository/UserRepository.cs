@@ -18,6 +18,7 @@ namespace Kanban.Data
         }
 
         public List<User> GetAllUsers() => _localDataUser.GetAllUsers();
+        public User GetUserByCredentials(User user) => _localDataUser.GetUserByCredentials(user);
         public string RegisterUser(User user) => _localDataUser.RegisterUser(user);
     }
 }

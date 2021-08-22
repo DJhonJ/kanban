@@ -31,19 +31,19 @@ namespace Kanban.Application
                 return "password vacia";
             }
 
-            var users = _userRepository.GetAllUsers();
-
-            if (users == null)
-            {
-                return "usuario no existe";
-            }
-
-            var user = users.Where(u => u.UserName == username && u.Password == password).FirstOrDefault();
+            var user = _userRepository.GetUserByCredentials(new User(0, username, password, string.Empty, string.Empty));
 
             if (user == null)
             {
                 return "usuario no existe";
             }
+
+            //var user = users.Where(u => u.UserName == username && u.Password == password).FirstOrDefault();
+
+            //if (user == null)
+            //{
+            //    return "usuario no existe";
+            //}
 
             return $"username: {user.UserName} - password: {user.Password}";
         }

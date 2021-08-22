@@ -25,5 +25,18 @@ namespace Kanban.Infrastructure.database
 
             return new DataTable();
         }
+
+        public Dictionary<string, object> ToDictionary(int indexTable = 0)
+        {
+            DataTable table = GetTable(indexTable);
+
+            if (table.Rows.Count > 0)
+            {
+                DataRow row = table.Rows[0];
+                return row.Table.Columns.Cast<DataColumn>().ToDictionary(c => c.ColumnName, c => row[c], StringComparer.InvariantCultureIgnoreCase);
+            }
+
+            return new Dictionary<string, object>();
+        }
     }
 }

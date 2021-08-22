@@ -12,11 +12,11 @@ namespace Kanban.Infrastructure.database
 {
     public class UserData: ILocalDataUser
     {
-        private readonly TransactSQL _transact;
+        private readonly TransactSQL transactSQL;
 
         public UserData(TransactSQL t)
         {
-            _transact = t;
+            transactSQL = t;
         }
 
         public List<User> GetAllUsers()
@@ -31,11 +31,29 @@ namespace Kanban.Infrastructure.database
             return users;
         }
 
+        public User GetUserByCredentials(User user)
+        {
+            Dictionary<string, object> usuario = transactSQL.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "V", SqlDbType.Char, 1)
+                                                                                          , new ParameterSQL("usuario", user.UserName, SqlDbType.VarChar, 50)
+                                                                                          , new ParameterSQL("clave", user.Password, SqlDbType.VarChar, 50)).ToDictionary(0);
+
+            if (usuario.Count > 0 && usuario.ContainsKey("Id"))
+            {
+                return new User(int.Parse(usuario["Id"].ToString()), usuario["Usuario"].ToString(),
+                    usuario["Clave"].ToString(), usuario["Nombre"].ToString(), usuario["Email"].ToString());
+            }
+
+            return null;
+        }
+
         public string RegisterUser(User user)
         {
-            var resultado = _transact.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "S", SqlDbType.Char, 1, ParameterDirection.Input)).GetTable(0);
-
-            return "";
+            var resultado = transactSQL.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "I", SqlDbType.Char, 1, ParameterDirection.Input)
+                                                                     , new ParameterSQL("nombre", user.Name, SqlDbType.VarChar, 100)
+                                                                     , new ParameterSQL("email", user.Email, SqlDbType.VarChar, 100)
+                                                                     , new ParameterSQL("usuario", user.UserName, SqlDbType.VarChar, 50)
+                                                                     , new ParameterSQL("clave", user.Password, SqlDbType.VarChar, 50)).ToDictionary(0);
+            return resultado["Id"].ToString();
         }
     }
 }

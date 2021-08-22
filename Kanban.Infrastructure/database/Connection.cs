@@ -15,12 +15,16 @@ namespace Kanban.Infrastructure.database
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            sqlConnection = null;
         }
 
         public SqlConnection GetConnection()
         {
-            sqlConnection = new SqlConnection(GetConnectionString());
+            if (sqlConnection == null)
+            {
+                sqlConnection = new SqlConnection(GetConnectionString());
+            }
+
             return sqlConnection;
         }
 
@@ -34,13 +38,14 @@ namespace Kanban.Infrastructure.database
         public void Open()
         {
             if (sqlConnection == null) throw new Exception("fallo al abrir conexion.");
-            sqlConnection.Close();
+            sqlConnection.Open();
         }
 
         public void Close()
         {
             if (sqlConnection == null) throw new Exception("fallo al cerrar conexion.");
             sqlConnection.Close();
+            Dispose();
         }
     }
 }

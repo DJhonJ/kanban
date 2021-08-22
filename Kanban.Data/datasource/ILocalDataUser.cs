@@ -10,6 +10,7 @@ namespace Kanban.Data.datasource
     public interface ILocalDataUser
     {
         List<User> GetAllUsers();
+        User GetUserByCredentials(User user);
         string RegisterUser(User user);
     }
 }
