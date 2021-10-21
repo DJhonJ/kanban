@@ -11,7 +11,7 @@
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <label>Nombre</label>
-                            <input type="text" name="txtNombre" id="txtNombre" class="form-control" data-action-name="nombre" />
+                            <input type="text" name="txtNombre" id="txtNombre" class="form-control" data-action-name="nombre" autofocus />
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12">

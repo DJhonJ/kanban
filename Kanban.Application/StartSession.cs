@@ -3,49 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kanban.Application.Interface;
 using Kanban.Data;
 using Kanban.Domain;
+using Kanban.Infrastructure.database;
 
 namespace Kanban.Application
 {
     // recibe un repository en constructor
     public class StartSession
     {
-        private readonly UserRepository _userRepository;
+        private UserRepository _userRepository;
+        private readonly IController _controller;
 
-        public StartSession(UserRepository userRepository)
+        public StartSession(IController controller)
         {
-            _userRepository = userRepository;
+            _controller = controller;
+            _userRepository = new UserRepository(new UserData(new TransactSQL()));
         }
 
         //recibe username y password
-        public string Invoke(string username, string password)
+        public User Invoke(string username, string password)
         {
             if (string.IsNullOrEmpty(username))
             {
-                return "usuario vacio";
+                _controller.Fail("usuario vacio");
+                return null;
             }
 
             if (string.IsNullOrEmpty(password))
             {
-                return "password vacia";
+                _controller.Fail("password vacia");
+                return null;
             }
 
-            var user = _userRepository.GetUserByCredentials(new User(0, username, password, string.Empty, string.Empty));
+            User user = _userRepository.GetUserByCredentials(new User(0, username, password, string.Empty, string.Empty));
 
             if (user == null)
             {
-                return "usuario no existe";
+                _controller.Fail("usuario no existe");
+                return null;
             }
 
-            //var user = users.Where(u => u.UserName == username && u.Password == password).FirstOrDefault();
-
-            //if (user == null)
-            //{
-            //    return "usuario no existe";
-            //}
-
-            return $"username: {user.UserName} - password: {user.Password}";
+            return user;
+            //_controller.Success(user);
         }
     }
 }

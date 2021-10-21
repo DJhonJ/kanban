@@ -1,4 +1,5 @@
-﻿using Kanban.Controller;
+﻿using Kanban.Common;
+using Kanban.Controller;
 using Kanban.Interface;
 using Kanban.UI.Common;
 using System;
@@ -10,20 +11,27 @@ using System.Web.UI.WebControls;
 
 namespace Kanban
 {
-    public partial class Default : WebUIRequest, IDefaultView
+    public partial class Default : WebUIRequest//, IDefaultView
     {
-        private readonly DefaultController defaultController;
+        private readonly DefaultController _defaultController;
 
-        public Default() { }
+        //public Default(ResponseClient response)
+        //{
+        //}
 
-        public Default(DefaultController defaultController)
-        {
-            this.defaultController = defaultController;
-        }
+        //public Default(DefaultController defaultController)
+        //{
+        //    _defaultController = defaultController;
+        //}
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            defaultController.ValidarSessionState();
+            //if (_defaultController == null)
+            //{
+            //    SessionOff("Login.aspx");
+            //}
+
+            //_defaultController.ValidarSessionState();
         }
 
         public void SessionOff(string redirectUrl)

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IController.cs" />
     <Compile Include="RegisterUser.cs" />
     <Compile Include="StartSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +55,10 @@
     <ProjectReference Include="..\Kanban.Domain\Kanban.Domain.csproj">
       <Project>{45e4435a-de65-499a-b6d1-9a2eb6a7a4fc}</Project>
       <Name>Kanban.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kanban.Infrastructure\Kanban.Infrastructure.csproj">
+      <Project>{807ACD80-97BD-4C1C-BB6D-D3FC75AC45FE}</Project>
+      <Name>Kanban.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,7 +11,7 @@ namespace Kanban.Infrastructure.database
     public class Connection: IDisposable
     {
         private SqlConnection sqlConnection;
-        private readonly string connectionString = "";
+        private const string connectionString = "Data Source=LAPTOP-RT5CO4QQ\\SQL2014;Initial Catalog=Kanban;Persist Security Info=True;User ID=sa;Password=sa";
 
         public void Dispose()
         {

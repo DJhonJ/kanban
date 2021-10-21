@@ -3,32 +3,65 @@
     var krequest = function () {};
 
     krequest.post = function ({ typeHttp, data }) {
-        const request = new XMLHttpRequest();
-        
-        if (!request) {
-            console.log(new Error('el navegador no soporta XmlHttpRequest'));
-            return;
-        }
+        return new Promise((resolve, reject) => {
+            try {
+                const request = new XMLHttpRequest();
 
-        request.open(typeHttp, window.location.pathname, true);
+                if (!request) {
+                    console.log(new Error('el navegador no soporta XmlHttpRequest'));
+                    return;
+                }
 
-        request.onreadystatechange = function () {
-            if (request.readyState === XMLHttpRequest.DONE) {
-                if (request.status === 200) {
-                    console.log(request.response);
-                }
-                else {
-                    console.log('problemas con la peticion');
-                }
+                request.open(typeHttp, window.location.pathname, true);
+
+                request.onloadstart = function () {
+                    console.log('onloadstart');
+                };
+
+                request.onreadystatechange = function () {
+                    if (request.readyState === XMLHttpRequest.DONE) {
+                        if (request.status === 200) {
+                            //console.log(request.response);
+                            //resolve(JSON.parse(request.response));
+                            resolve(JSON.parse(request.response));
+                        }
+                        else {
+                            //console.log('problemas con la peticion');
+                            reject('problemas con la request');
+                        }
+                    }
+                };
+
+                request.onprogress = function () {
+                    console.log('onprogress');
+                };
+
+                request.onload = function () {
+                    console.log('onload');
+                };
+
+                request.onloadend = function () {
+                    console.log('onloadend');
+                };
+
+                request.onerror = function () {
+                    console.log('onerror');
+                };
+
+                request.onabort = function () {
+                    console.log('onabort');
+                };
+
+                request.setRequestHeader('Cache-Control', 'no-cache'); //para no almacenar en cache la respuesta
+                //request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+                request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                //request.setRequestHeader('Content-Type', 'multipart/form-data; charset=UTF-8');
+
+                request.send(parseData(data));
+            } catch {
+                resolve('problemas con la request kk');
             }
-        };
-
-        request.setRequestHeader('Cache-Control', 'no-cache'); //para no almacenar en cache la respuesta
-        //request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-        //request.setRequestHeader('Content-Type', 'multipart/form-data; charset=UTF-8');
-
-        request.send(parseData(data));
+        });
     };
 
     const parseData = (data) => {

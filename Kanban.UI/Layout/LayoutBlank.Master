@@ -9,14 +9,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" crossorigin>
+    <link rel="stylesheet" href="~/Styles/standard.css" />
     <link rel="stylesheet" href="~/Styles/main.css" />
     <title></title>
 </head>
 <body runat="server">
+    <header>
+        <div class="message-slide">MENSAJE ENVIADO AL USER</div>
+    </header>
+
     <main>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </main>
+    <div class="container-spinner-loading">
+        <div class="spinner-loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 
     <script src="../Script/krequest.js"></script>
     <script src="../Script/actionweb.js"></script>

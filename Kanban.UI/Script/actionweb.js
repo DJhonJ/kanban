@@ -2,8 +2,34 @@
     if (document.querySelector('button[data-action]')) {
         document.querySelector('button[data-action]').addEventListener('click', (e) => {
             e.preventDefault();
+            document.body.classList.add('enable-loading');
 
-            krequest.post({ typeHttp: 'POST', data: { ...obtenerData(), action: e.target.dataset.action } });
+            krequest.post({ typeHttp: 'POST', data: { ...obtenerData(), action: e.target.dataset.action } })
+                .then((response) => {
+                    if (response) {
+                        switch (response.StringCode) {
+                            case 'error':
+                                if (response.Message) {
+                                    messageSlide(response.Message, 5000);
+                                }
+                                break;
+
+                            case 'success':
+                                if (response.Redirect) {
+                                    window.location.href = response.Redirect;
+                                    return;
+                                }
+                                break;
+                        }
+                    }
+
+                    document.body.classList.remove('enable-loading');
+                    console.log(response);
+                })
+                .catch((message) => {
+                    document.body.classList.remove('enable-loading');
+                    console.log(message);
+                });
         });
     }
 });

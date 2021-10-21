@@ -22,7 +22,7 @@ namespace Kanban
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.Title = "Registro";
         }
 
         protected string Register(string nombre, string email, string username, string password)

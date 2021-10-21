@@ -1,11 +1,6 @@
-﻿* {
+﻿*, :after, :before {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-}
-
-:root {
-    --color-text-link: #58a6ff;
-    --color-text: #58a6ff;
 }
 
 body {
@@ -33,6 +28,10 @@ input {
     border-radius: 5px;
 }
 
+input:focus {
+    border-color: #000;
+}
+
 a {
     text-decoration: none;
     color: var(--color-text-link);
@@ -52,7 +51,7 @@ a:hover {
 
 .col-12, col-sm-12, col-md-12, col-lg-12, col-xl-12 {
     width: 100%;
-    padding: 0 0.8rem;
+    padding: 0 0.2rem;
 }
 
 .form-group {
@@ -66,7 +65,7 @@ a:hover {
 
 .form-group .form-check {
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     cursor: pointer;
 }
 
@@ -81,12 +80,12 @@ a:hover {
 }
 
 .input-group input, .input-group .form-control {
-    padding-right: 1.90rem;
+    padding-right: 1.5rem;
 } 
 
 .input-group .icon-group {
     position: relative;
-    left: -2rem;
+    left: -1.5rem;
 }
 
 .btn-block {
@@ -108,7 +107,7 @@ a:hover {
 
 .container-login .form-auth, .container-register .form-register {
     padding: 1.6rem;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     border-radius: 5px;
     margin: 9rem auto 0;
     background-color: #fff;
@@ -121,8 +120,16 @@ a:hover {
 
 button[data-action] {
     margin-top: 1rem;
-    background-color: #213458;
+    background-color: #000; /*#213458*/
     color: #fff;
+}
+
+button[data-action]:hover {
+    background-color: var(--color-black-hover);
+}
+
+button[data-action]:active {
+    background-color: var(--color-black);
 }
 
 /***************************
@@ -132,21 +139,23 @@ button[data-action] {
     width: 570px;
 }
 
-/*
-    RECOMENDACIONES ICONS MATERIAL DESING
-    size icons
-    .material-icons.md-18 { font-size: 18px; }
-    .material-icons.md-24 { font-size: 24px; }
-    .material-icons.md-36 { font-size: 36px; }
-    .material-icons.md-48 { font-size: 48px; }
+/***************************
+    MESSAGE
+****************************/
+.message-slide {
+    display: flex;
+    background-color: aliceblue;
+    padding: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    transition: top 1.5s ease;
+    position: relative;
+    top: -5rem;
+}
 
-    color
-    .material-icons.orange600 { color: #FB8C00; }
+.message-slide.top {
 
-    enabled - disabled
-    .material-icons.md-light { color: rgba(255, 255, 255, 1); }
-    .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
-*/
+}
 
 /***************************
     MEDIAS QUERY
@@ -323,7 +332,7 @@ button[data-action] {
 /* MAX - WIDTH */
 @media screen and (max-width: 576px) {
     .container-login, .container-register {
-        padding: 0 1rem;
+        /*padding: 0 1rem;*/
     }
 
     .container-login .form-auth, .container-register .form-register {

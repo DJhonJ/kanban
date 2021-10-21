@@ -1,4 +1,5 @@
 ﻿using Kanban.Controller;
+using Kanban.Domain;
 using Kanban.Interface;
 using Kanban.UI.Common;
 using System;
@@ -11,26 +12,37 @@ using System.Web.UI.WebControls;
 
 namespace Kanban
 {
-    public partial class Login : WebUIRequest
+    public partial class Login : WebUIRequest, IResponseView
     {
-        private LoginController _loginController;
+        private readonly LoginController _loginController;
+
+        public Login()
+        {
+            _loginController = new LoginController(this);
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.Title = "Login";
+
+            var s = Response;
         }
 
-        public Login() { }
-
-        public Login(LoginController loginController)
+        protected void Ingresar(string username, string password)
         {
-            _loginController = loginController;
+            _loginController.StartSession(username, password);
+            //Redirect("Default.aspx");
+            RedirectClient = "Default.aspx";
         }
 
-        protected string Ingresar(string username, string password)
+        public void ResponseView(object result)
         {
-            string result = _loginController.StartSession(username, password);
-            return result;
+            ResponseClient(result);
+        }
+
+        public void Redirect(string url)
+        {
+            HttpContext.Current.Response.Redirect(url);
         }
     }
 }

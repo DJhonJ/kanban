@@ -10,19 +10,19 @@ namespace Kanban.Controller
     public class DefaultController
     {
         private readonly HttpSessionState Session;
-        private readonly IDefaultView defaultView;
+        private readonly IDefaultView _defaultView;
 
         public DefaultController(HttpSessionState Session, IDefaultView defaultView)
         {
             this.Session = Session;
-            this.defaultView = defaultView;
+            _defaultView = defaultView;
         }
 
         public void ValidarSessionState()
         {
             if (Session["login"] == null || (Session["login"] != null && Session["login"].ToString() == "0"))
             {
-                defaultView.SessionOff("Login.aspx");
+                _defaultView.SessionOff("Login.aspx");
             }
         }
     }

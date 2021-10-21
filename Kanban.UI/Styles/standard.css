@@ -1,0 +1,90 @@
+﻿/*
+    RECOMENDACIONES ICONS MATERIAL DESING
+
+    color
+    .material-icons.orange600 { color: #FB8C00; }
+
+    enabled - disabled
+    .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+    .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+*/
+
+:root {
+    --color-text-link: #58a6ff;
+    --color-danger: #dc3545;
+    --color-success: #198754;
+    --color-warning: #ffc107;
+    --color-black: #000;
+    --color-black-hover: #343434;
+}
+
+/*size icons*/
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+/*loader*/
+.container-spinner-loading {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+body.enable-loading .container-spinner-loading, .container-spinner-loading.enable {
+    display: flex;
+}
+
+.spinner-loading {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.spinner-loading div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  margin: 8px;
+  border: 5px solid #003253;
+  border-radius: 50%;
+  animation: spinner-loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #003253 transparent transparent transparent;
+}
+.spinner-loading div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.spinner-loading div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.spinner-loading div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes spinner-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

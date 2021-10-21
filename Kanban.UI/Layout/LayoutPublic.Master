@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" crossorigin>
+    <link rel="stylesheet" href="~/Styles/standard.css" />
     <link rel="stylesheet" href="~/Styles/main.css" />
     <title>Kanban</title>
 </head>
 <body runat="server">
     <header></header>
-    <form id="form1" runat="server">
-        <main>
-            <asp:ContentPlaceHolder ID="contentPlaceHolderMain" runat="server">
-            </asp:ContentPlaceHolder>
-        </main>
-    </form>
-
+    <main>
+        <asp:ContentPlaceHolder ID="contentPlaceHolderMain" runat="server">
+        </asp:ContentPlaceHolder>
+    </main>
     <footer></footer>
 </body>
 </html>

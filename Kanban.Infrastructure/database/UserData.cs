@@ -12,11 +12,11 @@ namespace Kanban.Infrastructure.database
 {
     public class UserData: ILocalDataUser
     {
-        private readonly TransactSQL transactSQL;
+        private readonly TransactSQL _transactSQL;
 
-        public UserData(TransactSQL t)
+        public UserData(TransactSQL transacSQL)
         {
-            transactSQL = t;
+            _transactSQL = transacSQL;
         }
 
         public List<User> GetAllUsers()
@@ -33,9 +33,9 @@ namespace Kanban.Infrastructure.database
 
         public User GetUserByCredentials(User user)
         {
-            Dictionary<string, object> usuario = transactSQL.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "V", SqlDbType.Char, 1)
-                                                                                          , new ParameterSQL("usuario", user.UserName, SqlDbType.VarChar, 50)
-                                                                                          , new ParameterSQL("clave", user.Password, SqlDbType.VarChar, 50)).ToDictionary(0);
+            Dictionary<string, object> usuario = _transactSQL.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "V", SqlDbType.Char, 1)
+                                                                                          , new ParameterSQL("usuario", user.UserName, SqlDbType.NVarChar, 50)
+                                                                                          , new ParameterSQL("clave", user.Password, SqlDbType.NVarChar, 50)).ToDictionary(0);
 
             if (usuario.Count > 0 && usuario.ContainsKey("Id"))
             {
@@ -48,11 +48,11 @@ namespace Kanban.Infrastructure.database
 
         public string RegisterUser(User user)
         {
-            var resultado = transactSQL.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "I", SqlDbType.Char, 1, ParameterDirection.Input)
-                                                                     , new ParameterSQL("nombre", user.Name, SqlDbType.VarChar, 100)
-                                                                     , new ParameterSQL("email", user.Email, SqlDbType.VarChar, 100)
-                                                                     , new ParameterSQL("usuario", user.UserName, SqlDbType.VarChar, 50)
-                                                                     , new ParameterSQL("clave", user.Password, SqlDbType.VarChar, 50)).ToDictionary(0);
+            var resultado = _transactSQL.ExecuteQuery("GestionUsuario", new ParameterSQL("oper", "I", SqlDbType.Char, 1, ParameterDirection.Input)
+                                                                      , new ParameterSQL("nombre", user.Name, SqlDbType.NVarChar, 100)
+                                                                      , new ParameterSQL("email", user.Email, SqlDbType.NVarChar, 100)
+                                                                      , new ParameterSQL("usuario", user.UserName, SqlDbType.NVarChar, 50)
+                                                                      , new ParameterSQL("clave", user.Password, SqlDbType.NVarChar, 50)).ToDictionary(0);
             return resultado["Id"].ToString();
         }
     }

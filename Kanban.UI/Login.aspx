@@ -10,14 +10,14 @@
                         <label>Usuario</label>
                         <div class="input-group">
                             <input type="text" class="form-control" name="txtUsuario" id="txtUsuario" data-action-name="username" autofocus="" autocomplete="username" />
-                            <span class="icon-group material-icons md-24">cancel</span>
+                            <span class="icon-group material-icons md-18">person</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Clave</label>
                         <div class="input-group">
                             <input type="password" class="form-control" name="txtPassword" id="txtPassword" data-action-name="password" autocomplete="current-password" />
-                            <span class="icon-group material-icons md-24">lock</span>
+                            <span class="icon-group material-icons md-18">lock</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -27,7 +27,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <button type="submit" data-action="Ingresar" class="btn-block">Ingresar</button>
+                        <button type="submit" data-action="Ingresar" id="buttonLogin" class="btn-block">Ingresar</button>
                     </div>
                 </div>
                 <div class="call-register">

@@ -8,6 +8,11 @@ namespace Kanban.Domain
 {
     public class User
     {
+        public User()
+        {
+
+        }
+
         public User(int id, string username, string password, string name, string email)
         {
             Id = id;

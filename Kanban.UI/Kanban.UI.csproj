@@ -44,7 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=6.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da" />
     <Reference Include="Microsoft.AspNet.WebFormsDependencyInjection.Unity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebFormsDependencyInjection.Unity.1.0.0\lib\Net472\Microsoft.AspNet.WebFormsDependencyInjection.Unity.dll</HintPath>
     </Reference>
@@ -55,6 +54,7 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -90,11 +90,13 @@
     <Content Include="Script\krequest.js" />
     <Content Include="Script\main.js" />
     <Content Include="Styles\main.css" />
+    <Content Include="Styles\standard.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ResponseClient.cs" />
     <Compile Include="Controller\DefaultController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
@@ -112,6 +114,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Interface\IDefaultView.cs" />
+    <Compile Include="Interface\IResponseView.cs" />
     <Compile Include="Layout\LayoutBlank.Master.cs">
       <DependentUpon>LayoutBlank.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -145,7 +148,9 @@
   <ItemGroup>
     <Content Include="Layout\LayoutPublic.Master" />
     <Content Include="Layout\LayoutBlank.Master" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
