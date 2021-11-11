@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using Kanban.Application;
@@ -23,12 +24,13 @@ namespace Kanban
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            RouteTable.Routes.MapPageRoute("principal-key", "kanban", "~/Default.aspx");
+            RouteTable.Routes.MapPageRoute("login-key", "login", "~/Login.aspx");
             ConfigDependencyInjection();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-//            ConfigDependencyInjection();
         }
 
         protected void Session_Start(object sender, EventArgs e)

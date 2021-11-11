@@ -39,12 +39,14 @@ namespace Kanban.UI.Common
 
                     if (methodInfo != null)
                     {
-                        _responseClient.ResultMethod = methodInfo.Invoke(this, GetValueParameters(FormWebUI));
-                        _responseClient.Code = _responseClient.ResultMethod == null ? 1100 : 1000;
-                        _responseClient.StringCode = "success";
-                        _responseClient.Redirect = RedirectClient;
+                        
                     }
-                    
+
+                    _responseClient.ResultMethod = methodInfo.Invoke(this, GetValueParameters(FormWebUI));
+                    _responseClient.Code = _responseClient.ResultMethod == null ? 1100 : 1000;
+                    _responseClient.StringCode = "success";
+                    _responseClient.Redirect = RedirectClient;
+
                     ResponseClient(JsonConvert.SerializeObject(_responseClient));
                 }
                 else

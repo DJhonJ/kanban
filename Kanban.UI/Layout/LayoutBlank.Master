@@ -6,14 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" crossorigin>
+    <link rel="stylesheet" href="~/Fonts/Family/montserrat.css" crossorigin>
+    <link rel="stylesheet" href="~/Fonts/Icons/material-icons.css"  crossorigin>
+    <link rel="stylesheet" href="~/Fonts/Icons/material-icons-outline.css" crossorigin>
     <link rel="stylesheet" href="~/Styles/standard.css" />
     <link rel="stylesheet" href="~/Styles/main.css" />
     <title></title>
 </head>
-<body runat="server">
+<body runat="server" class="layout-blank">
     <header>
         <div class="message-slide">MENSAJE ENVIADO AL USER</div>
     </header>
@@ -31,8 +31,8 @@
         </div>
     </div>
 
-    <script src="../Script/krequest.js"></script>
-    <script src="../Script/actionweb.js"></script>
-    <script src="../Script/main.js"></script>
+    <script src="./Script/krequest.js"></script>
+    <script src="./Script/actionweb.js"></script>
+    <script src="./Script/main.js"></script>
 </body>
 </html>

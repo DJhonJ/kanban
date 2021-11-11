@@ -10,7 +10,7 @@
                         switch (response.StringCode) {
                             case 'error':
                                 if (response.Message) {
-                                    messageSlide(response.Message, 5000);
+                                    messageSlide(response.Message, 3000);
                                 }
                                 break;
 

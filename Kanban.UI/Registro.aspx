@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <button type="submit" class="btn-block" data-action="Register">Registrar</button>
+                            <button type="submit" class="btn-block btn-black" data-action="Register">Registrar</button>
                         </div>
                     </div>
                 </div>

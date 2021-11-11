@@ -27,7 +27,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <button type="submit" data-action="Ingresar" id="buttonLogin" class="btn-block">Ingresar</button>
+                        <button type="submit" data-action="Ingresar" id="buttonLogin" class="btn-block btn-black">Ingresar</button>
                     </div>
                 </div>
                 <div class="call-register">

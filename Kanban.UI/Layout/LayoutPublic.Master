@@ -1,23 +1,85 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutPublic.master.cs" Inherits="Kanban.layout.LayoutPublic" %>
+﻿    <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LayoutPublic.master.cs" Inherits="Kanban.layout.LayoutPublic" %>
 
 <!DOCTYPE html>
 <html lang="es">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" crossorigin>
+    <link rel="stylesheet" href="~/Fonts/Family/montserrat.css" crossorigin>
+    <link rel="stylesheet" href="~/Fonts/Icons/material-icons.css"  crossorigin>
+    <link rel="stylesheet" href="~/Fonts/Icons/material-icons-outline.css" crossorigin>
     <link rel="stylesheet" href="~/Styles/standard.css" />
     <link rel="stylesheet" href="~/Styles/main.css" />
     <title>Kanban</title>
 </head>
-<body runat="server">
-    <header></header>
-    <main>
-        <asp:ContentPlaceHolder ID="contentPlaceHolderMain" runat="server">
-        </asp:ContentPlaceHolder>
-    </main>
-    <footer></footer>
+<body runat="server" class="layout-public">
+    <div class="message-slide">SLIDE MENSAJE</div>
+    <div class="layout-grid">
+        <header class="header">
+            <div>
+                <h3 style="font-size: 17px; font-weight: bold;">Proyectos</h3>
+            </div>
+        </header>
+        <nav class="nav">
+            <div class="nav-header">
+                LOGO BN BACANO
+            </div>
+            <div class="nav-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link active">
+                            <i class="material-icons md-18">view_cozy</i>
+                            Tableros
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link">
+                            <i class="material-icons md-18">timeline</i>
+                            Etapas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link">
+                            <i class="material-icons md-18">lock</i>
+                            Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link">
+                            <i class="material-icons md-18">lock</i>
+                            Proyectos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#proyectos" class="nav-link">
+                            <i class="material-icons md-18">lock</i>
+                            Proyectos
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="main">
+            <asp:ContentPlaceHolder ID="contentPlaceHolderMain" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <footer class="footer">
+            <b>Politica del programa</b>
+        </footer>
+    </div>    
+
+    <div class="container-spinner-loading">
+        <div class="spinner-loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="./Script/krequest.js"></script>
+    <script src="./Script/actionweb.js"></script>
+    <script src="./Script/main.js"></script>
 </body>
 </html>
